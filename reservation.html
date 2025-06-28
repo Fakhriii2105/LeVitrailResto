@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation | Le Vitrail</title>
+    <link rel="stylesheet" href="./assets/css/reservation.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.2/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/img/title-logo.png" alt="logo" />
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+            <a href="reservation.html" class="active">Reservation</a>
+        </nav>
+    </header>
+
+    <section class="reservation-section">
+        <div class="reservation-form">
+            <h2>Reserve a Table</h2>
+            <form action="#" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required />
+
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required />
+
+                <label for="guests">Number of Guests</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" required />
+
+                <button type="submit">Submit Reservation</button>
+            </form>
+        </div>
+
+        <div class="reservation-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.153515827358!2d107.5711975741059!3d-6.872202067238246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e420abc30acf%3A0x10569255865460a5!2sPoliteknik%20Negeri%20Bandung!5e0!3m2!1sen!2sid!4v1746611386025!5m2!1sen!2sid"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <button class="find-me-button" onclick="openGoogleMaps()">Find Me</button>
+        </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

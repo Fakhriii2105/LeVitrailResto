@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Le Vitrail</title>
+    <link rel="stylesheet" href="./assets/css/about.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.0.2/dist/lenis.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="./assets/img/title-logo.png" alt="logo" />
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="events.html">Events</a>
+            <a href="about.html" class="active">About</a>
+            <a href="reservation.html">Reservation</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3 class="about-subtitle">About Us</h3>
+            <h2 class="about-title">Where Elegance Meets Comfort</h2>
+            <p class="about-description">
+                Le Vitrail is more than just a restaurant — it’s a sanctuary of refined taste,
+                thoughtful design, and meaningful moments. Discover our story, vision, and passion behind every detail.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-story">
+        <div class="section-header">
+            <h2>Our Story</h2>
+            <p>
+                Founded in 2020, Le Vitrail was born from a dream to merge art, cuisine, and community.
+                Located in the heart of the city, we offer a tranquil space to dine, connect, and unwind.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-values">
+        <div class="values-container">
+            <div class="values-text">
+                <h2>What We Believe In</h2>
+                <ul>
+                    <li>
+                        <h4>Crafted Excellence</h4>
+                        <p>Every dish is made with premium ingredients, attention to detail, and a touch of creativity.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Warm Hospitality</h4>
+                        <p>We treat every guest like family and strive to create a memorable, welcoming experience.</p>
+                    </li>
+                    <li>
+                        <h4>Timeless Aesthetic</h4>
+                        <p>Our interior blends classical charm with modern sensibilities — a visual feast in itself.</p>
+                    </li>
+                    <li>
+                        <h4>Community & Culture</h4>
+                        <p>We support local artists, host meaningful events, and celebrate togetherness.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="values-image">
+                <img src="./assets/img/waiter.jpg" alt="Waiter" />
+            </div>
+        </div>
+    </section>
+
+    <section class="quotes">
+        <h2 class="reveal-type">"Where every plate is a canvas, and every meal is a masterpiece. Welcome to Le Vitrail"</h3>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="wrapper">
+                <div class="footer-widget">
+                    <a href="#">
+                        <img src="./assets/img/footer-logo.png" alt="" class="logo">
+                    </a>
+                    <p class="desc">
+                        Le Vitrail – Crafted for unforgettable evenings, timeless flavors, and cherished moments.
+                    </p>
+                    <ul class="socials">
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h6>Quick Links</h6>
+                    <ul class="links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Reservation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h6>Careers</h6>
+                    <ul class="links">
+                        <li><a href="#">Open Positions</a></li>
+                        <li><a href="#">Our Culture</a></li>
+                        <li><a href="#">How to Apply</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright-wrapper">
+                <p>
+                    Designed and Developed by
+                    <a href="#" target="blank">Fakhri Nabil Putra</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/split-type" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+                gsap.registerPlugin(ScrollTrigger);
+
+                const elements = document.querySelectorAll('.reveal-type');
+                elements.forEach((el) => {
+                    const split = new SplitType(el, { types: 'chars' });
+
+                    gsap.fromTo(
+                        split.chars,
+                        { opacity: 0, y: 100 },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            stagger: 0.05,
+                            scrollTrigger: {
+                                trigger: el,
+                                start: 'top 60%',
+                                end: 'end 40%',
+                                scrub: 1,
+                            }
+                        }
+                    );
+                });
+
+                const lenis = new Lenis();
+
+                function raf(time) {
+                    lenis.raf(time);
+                    ScrollTrigger.update();
+                    requestAnimationFrame(raf);
+                }
+
+                requestAnimationFrame(raf);
+            });
+
+    </script>
+</body>
+
+</html>

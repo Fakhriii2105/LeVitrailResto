@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #fff;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo img {
+    height: 200px;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 30px;
+    font-weight: 385;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #f0c040;
+}
+
+.nav-links a:hover {
+    color: #f0c040;
+}
+
+.reservation-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding: 60px;
+    padding-top: 100px;
+    gap: 40px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url('../img/slide5.jpg');
+}
+
+.reservation-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.reservation-form h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.reservation-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+}
+
+.reservation-form input:focus {
+    outline: 2px solid #f0c040;
+}
+
+.reservation-form button {
+    padding: 12px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: #f0c040;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-form button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.reservation-map {
+    flex: 1;
+    min-width: 300px;
+    padding-top: 100px;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+    position: relative;
+    /* Tambahkan ini */
+}
+
+.reservation-map iframe {
+    width: 100%;
+    height: 100%;
+    /* Pastikan iframe mengisi penuh div */
+    border: 0;
+}
+
+.find-me-button {
+    position: absolute;
+    bottom: 20px;
+    /* Posisi tombol di bawah */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center tombol */
+    margin-top: 0;
+    padding: 12px 20px;
+    font-size: 1rem;
+    background-color: #f0c040;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.find-me-button:hover {
+    background-color: #fff;
+    color: #000;
+}
